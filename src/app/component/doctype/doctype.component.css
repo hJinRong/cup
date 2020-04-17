@@ -1,0 +1,40 @@
+.doctype-con {
+  width: 100%;
+  height: 54px;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  background-color: bisque;
+  margin: 2px 0;
+}
+
+
+img {
+  width: 48px;
+  height: 48px;
+}
+
+.name-dir {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.name-dir > div {
+  text-align: right;
+}
+
+.name {
+  font-weight: 600;
+  font-size: large;
+}
+
+.dir {
+  font-weight: 300;
+  font-size: smaller;
+  text-overflow: ellipsis;
+}

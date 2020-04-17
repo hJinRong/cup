@@ -1,5 +1,9 @@
 <div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+  <div class="filelist" id="filelist">
+    <div *ngFor="let item of fm.filelist">
+      <app-doctype [name]="item.name" [dir]="item.dir"></app-doctype>
+    </div>
+  </div>
+  <div class="showpart">
+  </div>
 </div>
