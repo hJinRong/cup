@@ -1,11 +1,10 @@
 {
-  "name": "angular-electron",
+  "name": "traffic-analysis",
   "version": "7.0.3",
-  "description": "Angular 9 with Electron (Typescript + SASS + Hot Reload)",
-  "homepage": "https://github.com/maximegris/angular-electron",
+  "description": "A software for traffic analysis.",
   "author": {
-    "name": "Maxime GRIS",
-    "email": "maxime.gris@gmail.com"
+    "name": "hJinRong",
+    "email": "rong161514@gmail.com"
   },
   "keywords": [
     "angular",
