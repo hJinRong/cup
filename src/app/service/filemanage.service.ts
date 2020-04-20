@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import { FileItem } from "../component/doctype/fileitem";
 
 @Injectable({
@@ -8,21 +8,10 @@ export class FilemanageService {
   constructor() {}
 
   filelist: FileItem[] = [
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
-    { name: "aaa", dir: "E:/test01/video.avi" },
+    { name: "aaa", dir: "E:/test01/video-01.avi" },
+    { name: "aaa", dir: "E:/test01/video-01.avi" },
+    { name: "aaa", dir: "E:/test01/video-01.avi" },
+    { name: "aaa", dir: "E:/test01/video-01.avi" },
+    { name: "aaa", dir: "E:/test01/video-01.avi" },
   ];
 }
