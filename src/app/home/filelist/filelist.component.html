@@ -1,5 +1,5 @@
 <div class="filelist" id="filelist">
-    <div *ngFor="let item of fm.filelist">
+    <div *ngFor="let item of filelist | async">
       <app-doctype [name]="item.name" [dir]="item.dir"></app-doctype>
     </div>
 </div>

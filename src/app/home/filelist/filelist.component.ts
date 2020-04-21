@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { FilemanageService } from '../../service/filemanage.service';
-import { FileItem } from '../doctype/fileitem';
-import { readFileSync, promises } from 'fs';
+import { Component, OnInit } from "@angular/core";
+import { FilemanageService } from "../../service/filemanage.service";
+import { FileItem } from "../doctype/fileitem";
+import { readFileSync, promises } from "fs";
+import { Observable } from "rxjs";
 
 @Component({
-  selector: 'app-filelist',
-  templateUrl: './filelist.component.html',
-  styleUrls: ['./filelist.component.css']
+  selector: "app-filelist",
+  templateUrl: "./filelist.component.html",
+  styleUrls: ["./filelist.component.css"],
 })
 export class FilelistComponent implements OnInit {
+  filelist: Observable<FileItem[]>;
 
-  fileList: FileItem[];
-
-  constructor(public fm:FilemanageService) { }
+  constructor(public fms: FilemanageService) {}
 
   ngOnInit(): void {
-    this.fileList = this.fm.filelist;
+    this.filelist = this.getFileList();
 
     let con = document.getElementById("filelist");
 
@@ -24,22 +24,12 @@ export class FilelistComponent implements OnInit {
       const files = e.dataTransfer.files;
       if (files) {
         //TODO May be we can store serval files at the same time.
-        console.log(
-          "path",
-          files[0].path,
-          "name",
-          files[0].name,
-          "type",
-          files[0].type
-        );
         const content = readFileSync(files[0].path);
-        console.log(this.fm.filelist);
         await promises.writeFile(`E:/tmp/${files[0].name}`, content);
-        this.fm.filelist.push({
+        this.fms.newFile({
           name: `${files[0].name}`,
           dir: `E:/tmp/${files[0].name}`,
         });
-        console.log(this.fm.filelist);
       }
     });
 
@@ -48,4 +38,7 @@ export class FilelistComponent implements OnInit {
     });
   }
 
+  getFileList() {
+    return this.fms.getFileList();
+  }
 }
