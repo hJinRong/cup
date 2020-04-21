@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FilemanageService } from '../../service/filemanage.service';
 
 @Component({
   selector: 'app-analyres',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnalyresComponent implements OnInit {
 
-  constructor() { }
+  constructor(public fm:FilemanageService) { }
 
   ngOnInit(): void {
   }
+
+  @Input() result: String;
 
 }

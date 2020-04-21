@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { exec } from "child_process";
+import { FilemanageService } from "../../service/filemanage.service";
 
 @Component({
   selector: "app-doctype",
@@ -7,7 +8,7 @@ import { exec } from "child_process";
   styleUrls: ["./doctype.component.css"],
 })
 export class DoctypeComponent implements OnInit {
-  constructor() {}
+  constructor(public fm:FilemanageService) {}
 
   ngOnInit(): void {}
 
@@ -29,20 +30,17 @@ export class DoctypeComponent implements OnInit {
         break;
     }
   }
-  output: string;
 
   analyzeNow(): void {
     //TODO Should replace the python file.
     exec(
       `e: && cd E:/test01/venv/Scripts && python E:/test01/my_deepsort.py --VIDEO_PATH ${this.dir} --config_detection E:/test01/deep_sort/deep/checkpoint/ckpt.t7`,
       (err, stdout, stderr) => {
-        // if (err) throw err;
         if (err) {
           throw err;
         }
         console.log(stdout);
-        this.output = "";
-        this.output.concat(stdout);
+        this.fm.message.push(stdout.replace('$','\n'));
       }
     );
   }

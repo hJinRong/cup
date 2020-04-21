@@ -1,0 +1,8 @@
+<div class="filelist" id="filelist">
+    <div *ngFor="let item of fm.filelist">
+      <app-doctype [name]="item.name" [dir]="item.dir"></app-doctype>
+    </div>
+</div>
+<div class="analyres-con">
+  <router-outlet></router-outlet>
+</div>

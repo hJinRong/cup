@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { FileItem } from "../component/doctype/fileitem";
+import { FileItem } from "../home/doctype/fileitem";
 
 @Injectable({
   providedIn: "root",
@@ -7,11 +7,7 @@ import { FileItem } from "../component/doctype/fileitem";
 export class FilemanageService {
   constructor() {}
 
-  filelist: FileItem[] = [
-    { name: "aaa", dir: "E:/test01/video-01.avi" },
-    { name: "aaa", dir: "E:/test01/video-01.avi" },
-    { name: "aaa", dir: "E:/test01/video-01.avi" },
-    { name: "aaa", dir: "E:/test01/video-01.avi" },
-    { name: "aaa", dir: "E:/test01/video-01.avi" },
-  ];
+  filelist: FileItem[] = [];
+
+  message: string[] = [];
 }

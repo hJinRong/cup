@@ -1,9 +1,5 @@
 <div class="container">
-  <div class="filelist" id="filelist">
-    <div *ngFor="let item of fm.filelist">
-      <app-doctype [name]="item.name" [dir]="item.dir"></app-doctype>
-    </div>
-  </div>
-  <div class="showpart">
+  <div class="filelist-con" id="filelist-con">
+    <router-outlet></router-outlet>
   </div>
 </div>
