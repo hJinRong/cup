@@ -3,6 +3,8 @@ import { FilemanageService } from "../../service/filemanage.service";
 import { FileItem } from "../doctype/fileitem";
 import { readFileSync, promises } from "fs";
 import { Observable } from "rxjs";
+import { switchMap } from "rxjs/operators";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-filelist",
@@ -11,11 +13,17 @@ import { Observable } from "rxjs";
 })
 export class FilelistComponent implements OnInit {
   filelist: Observable<FileItem[]>;
+  selectedId: number;
 
-  constructor(public fms: FilemanageService) {}
+  constructor(private fms: FilemanageService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.filelist = this.getFileList();
+    this.filelist = this.route.paramMap.pipe(
+      switchMap((params) => {
+        this.selectedId = +params.get("id");
+        return this.getFileList();
+      })
+    );
 
     let con = document.getElementById("filelist");
 

@@ -15,7 +15,7 @@ const routes: Routes = [
         component: FilelistComponent,
         children: [
           {
-            path: '',
+            path: ':id',
             component: AnalyresComponent
           }
         ]

@@ -6,6 +6,10 @@
   overflow-y: scroll;
 }
 
+.filelist a {
+  text-decoration: none;
+}
+
 .filelist::-webkit-scrollbar,.analyres-con::-webkit-scrollbar {
   display: block;
   width: 6px;

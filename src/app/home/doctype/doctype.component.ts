@@ -8,12 +8,13 @@ import { FilemanageService } from "../../service/filemanage.service";
   styleUrls: ["./doctype.component.css"],
 })
 export class DoctypeComponent implements OnInit {
-  constructor(public fm:FilemanageService) {}
+  constructor(public fms:FilemanageService) {}
 
   ngOnInit(): void {}
 
   iconDir: string;
 
+  @Input() id: number;
   @Input() name: string;
   @Input() dir: string;
   @Input() set type(t: string) {
@@ -40,7 +41,7 @@ export class DoctypeComponent implements OnInit {
           throw err;
         }
         console.log(stdout);
-        this.fm.message.push(stdout.replace('$','\n'));
+        this.fms.pushMessage(this.id, stdout);
       }
     );
   }

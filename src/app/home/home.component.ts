@@ -1,6 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { readFileSync, promises } from "fs";
-import { FilemanageService } from "../service/filemanage.service";
 
 @Component({
   selector: "app-home",
@@ -8,7 +6,7 @@ import { FilemanageService } from "../service/filemanage.service";
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent implements OnInit {
-  constructor(public fm: FilemanageService) {}
+  constructor() {}
 
   ngOnInit(): void {
   }

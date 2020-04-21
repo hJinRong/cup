@@ -1,6 +1,8 @@
-<div *ngFor="let res of fm.message">
-  <p>
-    {{ res }}
-  </p>
-  <hr />
+<div *ngIf="fileitem | async as item">
+  <div *ngFor="let res of item.analyres">
+    <p>
+      {{ res }}
+    </p>
+    <hr />
+  </div>
 </div>

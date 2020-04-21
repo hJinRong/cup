@@ -1,6 +1,8 @@
 <div class="filelist" id="filelist">
     <div *ngFor="let item of filelist | async">
-      <app-doctype [name]="item.name" [dir]="item.dir"></app-doctype>
+      <a [routerLink]="[item.id]">
+        <app-doctype [id]="item.id" [name]="item.name" [dir]="item.dir"></app-doctype>
+      </a>
     </div>
 </div>
 <div class="analyres-con">
