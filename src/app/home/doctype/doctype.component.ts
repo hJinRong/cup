@@ -40,8 +40,13 @@ export class DoctypeComponent implements OnInit {
         if (err) {
           throw err;
         }
-        console.log(stdout);
-        this.fms.pushMessage(this.id, stdout);
+        let tmp:string[] = stdout.split('$');
+        let out ='';
+        for (let i of tmp) {
+          out += (i);
+        }
+        console.log(out);
+        this.fms.pushMessage(this.id, out);
       }
     );
   }

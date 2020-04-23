@@ -1,8 +1,8 @@
 <div *ngIf="fileitem | async as item">
   <div *ngFor="let res of item.analyres">
-    <p>
+    <pre>
       {{ res }}
-    </p>
+    </pre>
     <hr />
   </div>
 </div>
