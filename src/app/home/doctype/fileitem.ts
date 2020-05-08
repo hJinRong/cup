@@ -3,4 +3,5 @@ export interface FileItem {
   name: string;
   dir: string;
   analyres?: string[];
+  type: string;
 }

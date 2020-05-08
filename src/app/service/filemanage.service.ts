@@ -33,6 +33,7 @@ export class FilemanageService {
       name: i.name,
       dir: i.dir,
       analyres: [],
+      type: i.type
     });
     this.filelist.next(this.list);
   }
