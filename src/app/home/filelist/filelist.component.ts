@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnChanges, OnDestroy } from "@angular/core";
 import { FilemanageService } from "../../service/filemanage.service";
 import { FileItem } from "../doctype/fileitem";
-import { readFileSync, promises } from "fs";
 import { Observable } from "rxjs";
 import { switchMap } from "rxjs/operators";
 import { ActivatedRoute } from "@angular/router";
@@ -54,14 +53,13 @@ export class FilelistComponent implements OnInit, OnDestroy {
     const files = e.dataTransfer.files;
     if (files) {
       console.log(files);
-      //TODO May be we can store serval files at the same time.
-      const content = readFileSync(files[0].path);
-      await promises.writeFile(`E:/tmp/${files[0].name}`, content);
-      this.fms.newFile({
-        name: `${files[0].name}`,
-        dir: `E:/tmp/${files[0].name}`,
-        type: `${files[0].type}`
-      });
+      for (let i = 0; i < files.length; i++) {
+        this.fms.newFile({
+          name: `${files[i].name}`,
+          dir: `${files[i].path}`,
+          type: `${files[i].type}`,
+        });
+      }
     }
   }
 

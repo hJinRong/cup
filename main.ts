@@ -55,17 +55,8 @@ function createWindow(): BrowserWindow {
   return win;
 }
 
-ipcMain.on("filecome", (event, filename, content) => {
-  console.log(filename);
-  writeFile(`E:/tmp/${filename}`, content, (err) => {
-    if (err) {
-      throw err;
-    }
-  });
-});
-
-ipcMain.on("btnmsg", (event, msg) => {
-  console.log(`ipcmain reveive ${msg}!`);
+ipcMain.on("req-app-path", (event, arg) => {
+  event.returnValue = app.getAppPath();
 });
 
 try {

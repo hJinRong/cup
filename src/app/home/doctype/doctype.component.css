@@ -36,6 +36,9 @@ img {
   font-size: large;
   width: 100%;
   margin-right: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .dir {
@@ -44,4 +47,5 @@ img {
   font-size: smaller;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }
