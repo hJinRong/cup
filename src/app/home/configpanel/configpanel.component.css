@@ -1,0 +1,27 @@
+form {
+  width: 285px;
+  height: 200px;
+  padding: 0 30px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding-top: 15px;
+  background-color: rgb(46, 46, 46);
+  border: #e91e63 solid 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.field {
+  width: 100%;
+  color: white;
+}
+
+button {
+  align-self: flex-end;
+  margin-right: 1em;
+  color: #e91e63;
+}

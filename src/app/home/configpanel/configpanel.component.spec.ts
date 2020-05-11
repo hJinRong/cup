@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FilelistComponent } from './filelist.component';
+import { ConfigpanelComponent } from './configpanel.component';
 
-describe('FilelistComponent', () => {
-  let component: FilelistComponent;
-  let fixture: ComponentFixture<FilelistComponent>;
+describe('ConfigpanelComponent', () => {
+  let component: ConfigpanelComponent;
+  let fixture: ComponentFixture<ConfigpanelComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FilelistComponent ]
+      declarations: [ ConfigpanelComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FilelistComponent);
+    fixture = TestBed.createComponent(ConfigpanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

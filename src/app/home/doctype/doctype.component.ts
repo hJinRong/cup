@@ -33,7 +33,7 @@ export class DoctypeComponent implements OnInit {
   }
 
   analyzeNow(): void {
-    //TODO Should replace the python file.
+    //FIXME the config args will change
     exec(
       `e: && cd E:/test01/venv/Scripts && python E:/test01/my_deepsort.py --VIDEO_PATH ${this.dir} --config_detection E:/test01/deep_sort/deep/checkpoint/ckpt.t7`,
       (err, stdout, stderr) => {
