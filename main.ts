@@ -1,7 +1,6 @@
 import { app, BrowserWindow, screen, Menu, ipcMain } from "electron";
 import * as path from "path";
 import * as url from "url";
-import { writeFile, readFile, createReadStream } from "fs";
 
 let win: BrowserWindow = null;
 const args = process.argv.slice(1),
@@ -19,7 +18,7 @@ function createWindow(): BrowserWindow {
     height: size.height * 0.6,
     webPreferences: {
       nodeIntegration: true,
-      allowRunningInsecureContent: serve ? true : false,
+      allowRunningInsecureContent: false,
     },
   });
 
