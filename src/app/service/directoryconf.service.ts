@@ -24,7 +24,7 @@ export class DirectoryconfService {
     return this.pythonInterpreterDir;
   }
 
-  getSecDir() {
+  getSecondDir() {
     return this.processProgramDir;
   }
 }

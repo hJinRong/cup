@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { exec } from "child_process";
 import { FilemanageService } from "../../service/filemanage.service";
+import { DirectoryconfService } from "../../service/directoryconf.service";
 
 @Component({
   selector: "app-doctype",
@@ -8,7 +9,7 @@ import { FilemanageService } from "../../service/filemanage.service";
   styleUrls: ["./doctype.component.css"],
 })
 export class DoctypeComponent implements OnInit {
-  constructor(public fms: FilemanageService) {}
+  constructor(public fms: FilemanageService, public cf: DirectoryconfService) {}
 
   ngOnInit(): void {}
 
@@ -33,9 +34,11 @@ export class DoctypeComponent implements OnInit {
   }
 
   analyzeNow(): void {
-    //FIXME the config args will change
+    const pythonScript = this.cf.getFirstDir();
+    const pythonProg = this.cf.getSecondDir();
+    //FIXME the config args will change, video path
     exec(
-      `e: && cd E:/test01/venv/Scripts && python E:/test01/my_deepsort.py --VIDEO_PATH ${this.dir} --config_detection E:/test01/deep_sort/deep/checkpoint/ckpt.t7`,
+      `${pythonScript}/python.exe ${pythonProg}/my_deepsort.py --VIDEO_PATH ${this.dir} --weights ${pythonProg}/best4.pt --yolov3_cfg ${pythonProg}/yolov3-tiny-1cls-se.cfg --config_deepsort ${pythonProg}/configs/deep_sort.yaml`,
       (err, stdout, stderr) => {
         if (err) {
           throw err;

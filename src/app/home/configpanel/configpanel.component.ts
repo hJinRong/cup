@@ -36,7 +36,7 @@ export class ConfigpanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.pythonInterpreter.setValue(this.dc.getFirstDir());
-    this.processProg.setValue(this.dc.getSecDir());
+    this.processProg.setValue(this.dc.getSecondDir());
   }
 
   pythonInterpreter = new FormControl("");
