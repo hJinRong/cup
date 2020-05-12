@@ -1,14 +1,13 @@
 form {
-  width: 285px;
+  width: 320px;
   height: 200px;
-  padding: 0 30px;
   position: absolute;
-  top: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  padding-top: 15px;
+  padding: 10px 15px 5px 15px;
   background-color: rgb(46, 46, 46);
   border: #e91e63 solid 2px;
+  border-radius: 0 0 10px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -24,4 +23,14 @@ button {
   align-self: flex-end;
   margin-right: 1em;
   color: #e91e63;
+  user-select: none;
+}
+
+.direction-con {
+  width: 100%;
+  text-align: center;
+}
+
+.direction-con:hover {
+  cursor: pointer;
 }

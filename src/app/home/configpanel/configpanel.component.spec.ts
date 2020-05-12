@@ -1,25 +1,18 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ConfigpanelComponent } from "./configpanel.component";
+import { DirectoryconfService } from "../../service/directoryconf.service";
 
-import { ConfigpanelComponent } from './configpanel.component';
-
-describe('ConfigpanelComponent', () => {
+describe("ConfigpanelComponent", () => {
   let component: ConfigpanelComponent;
-  let fixture: ComponentFixture<ConfigpanelComponent>;
+  let service: DirectoryconfService;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ConfigpanelComponent ]
-    })
-    .compileComponents();
-  }));
+  it("save value right or not", () => {
+    service = new DirectoryconfService();
+    component = new ConfigpanelComponent(service);
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ConfigpanelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    component.pythonInterpreter.setValue("pythondir");
+    component.processProg.setValue("ppdir");
+    component.saveAll();
+    expect(service.getFirstDir()).toBe("pythondir");
+    expect(service.getSecDir()).toBe("ppdir");
   });
 });

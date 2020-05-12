@@ -1,11 +1,17 @@
-<form>
-  <mat-form-field class="field">
-    <input matInput placeholder="Python interpreter" />
+<form [@toggleVisibility]="isOpen ? 'open' : 'closed'">
+  <mat-form-field appearance="fill" class="field">
+    <mat-label>Python interpreter</mat-label>
+    <input matInput [formControl]="pythonInterpreter" />
   </mat-form-field>
 
-  <mat-form-field class="field">
-    <input matInput placeholder="Process program" />
+  <mat-form-field appearance="fill" class="field">
+    <mat-label>Process program</mat-label>
+    <input matInput [formControl]="processProg" />
   </mat-form-field>
 
-  <button mat-button>Save</button>
+  <button mat-button (click)="saveAll()">Save</button>
+
+  <div class="direction-con" (click)="toggle()">
+    <img [src]="direction" />
+  </div>
 </form>
