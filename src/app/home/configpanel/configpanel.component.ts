@@ -42,7 +42,7 @@ export class ConfigpanelComponent implements OnInit {
   pythonInterpreter = new FormControl("");
   processProg = new FormControl("");
 
-  isOpen = true;
+  isOpen = false;
   get direction() {
     return this.isOpen
       ? "assets/direction/up.png"

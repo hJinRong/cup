@@ -1,8 +1,5 @@
 <div *ngIf="fileitem | async as item">
   <div *ngFor="let res of item.analyres">
-    <pre>
-      {{ res }}
-    </pre>
-    <hr />
+    <app-restable [formData]="res"></app-restable>
   </div>
 </div>

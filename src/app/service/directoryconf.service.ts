@@ -8,9 +8,10 @@ export class DirectoryconfService {
   private pythonInterpreterDir: string;
   private processProgramDir: string;
 
+  //FIXME remove the default config before build
   constructor() {
-    this.pythonInterpreterDir = "";
-    this.processProgramDir = "";
+    this.pythonInterpreterDir = "E:\\test01\\venv\\Scripts";
+    this.processProgramDir = "C:\\Users\\Administrator\\Desktop\\test01";
   }
 
   updatePythonInterpreterDir(dir: string) {

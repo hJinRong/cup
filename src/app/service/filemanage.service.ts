@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { FileItem } from "../home/doctype/fileitem";
+import { FileItem, AnalyRes } from "../home/doctype/fileitem";
 import { BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 
@@ -33,12 +33,12 @@ export class FilemanageService {
       name: i.name,
       dir: i.dir,
       analyres: [],
-      type: i.type
+      type: i.type,
     });
     this.filelist.next(this.list);
   }
 
-  pushMessage(id: number, msg: string) {
+  pushMessage(id: number, msg: AnalyRes) {
     // this.getFile(id).subscribe((item) => item.analyres.push(msg));
     for (let file of this.list) {
       if (file.id === id) {

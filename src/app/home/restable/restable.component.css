@@ -1,0 +1,7 @@
+.table-con {
+  width: 455px;
+}
+
+.table-con > table {
+  width: 100%;
+}

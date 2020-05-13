@@ -36,20 +36,14 @@ export class DoctypeComponent implements OnInit {
   analyzeNow(): void {
     const pythonScript = this.cf.getFirstDir();
     const pythonProg = this.cf.getSecondDir();
-    //FIXME the config args will change, video path
     exec(
       `${pythonScript}/python.exe ${pythonProg}/my_deepsort.py --VIDEO_PATH ${this.dir} --weights ${pythonProg}/best4.pt --yolov3_cfg ${pythonProg}/yolov3-tiny-1cls-se.cfg --config_deepsort ${pythonProg}/configs/deep_sort.yaml`,
       (err, stdout, stderr) => {
         if (err) {
           throw err;
         }
-        let tmp: string[] = stdout.split("$");
-        let out = "";
-        for (let i of tmp) {
-          out += i;
-        }
-        console.log(out);
-        this.fms.pushMessage(this.id, out);
+        console.log(JSON.parse(stdout));
+        this.fms.pushMessage(this.id, JSON.parse(stdout));
       }
     );
   }
