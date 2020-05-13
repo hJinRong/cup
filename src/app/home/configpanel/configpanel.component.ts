@@ -64,6 +64,7 @@ export class ConfigpanelComponent implements OnInit {
   saveAll() {
     this.updatePythonInterpreterDir(this.pythonInterpreter.value);
     this.updateProcessProjDir(this.processProg.value);
+    this.dc.writeConfInRuntime();
     this.toggle();
   }
 }

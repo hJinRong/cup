@@ -13,6 +13,6 @@ describe("ConfigpanelComponent", () => {
     component.processProg.setValue("ppdir");
     component.saveAll();
     expect(service.getFirstDir()).toBe("pythondir");
-    expect(service.getSecDir()).toBe("ppdir");
+    expect(service.getSecondDir()).toBe("ppdir");
   });
 });
