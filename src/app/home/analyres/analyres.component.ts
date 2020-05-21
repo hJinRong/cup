@@ -1,11 +1,9 @@
-import { Component, OnInit, Input, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FilemanageService } from "../../service/filemanage.service";
-import { ActivatedRoute, ParamMap } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
-import { FileItem, TimeAndFps, AnalyRes } from "../doctype/fileitem";
+import { FileItem } from "../doctype/fileitem";
 import { switchMap } from "rxjs/operators";
-import { MatPaginator } from "@angular/material/paginator";
-import { MatTableDataSource } from "@angular/material/table";
 
 @Component({
   selector: "app-analyres",
@@ -14,7 +12,6 @@ import { MatTableDataSource } from "@angular/material/table";
 })
 export class AnalyresComponent implements OnInit {
   fileitem: Observable<FileItem>;
-  displayedColumns: string[] = ["totalTime", "fps"];
 
   constructor(private fms: FilemanageService, private route: ActivatedRoute) {}
 

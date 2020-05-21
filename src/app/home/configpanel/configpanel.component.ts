@@ -32,7 +32,7 @@ import {
   ],
 })
 export class ConfigpanelComponent implements OnInit {
-  constructor(public dc: DirectoryconfService) {}
+  constructor(private dc: DirectoryconfService) {}
 
   ngOnInit(): void {
     this.pythonInterpreter.setValue(this.dc.getFirstDir());

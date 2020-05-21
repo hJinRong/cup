@@ -9,7 +9,10 @@ import { DirectoryconfService } from "../../service/directoryconf.service";
   styleUrls: ["./doctype.component.css"],
 })
 export class DoctypeComponent implements OnInit {
-  constructor(public fms: FilemanageService, public cf: DirectoryconfService) {}
+  constructor(
+    private fms: FilemanageService,
+    private cf: DirectoryconfService
+  ) {}
 
   ngOnInit(): void {}
 
