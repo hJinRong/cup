@@ -1,5 +1,8 @@
 <div *ngIf="fileitem | async as item">
-  <div *ngFor="let res of item.analyres">
-    <app-restable [formData]="res"></app-restable>
+  <div *ngIf="item.analyres">
+    <img [src]="lastFrameDir" alt="last-frame" />
+    <div *ngFor="let res of item.analyres">
+      <app-restable [formData]="res"></app-restable>
+    </div>
   </div>
 </div>
