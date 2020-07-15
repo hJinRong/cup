@@ -44,7 +44,7 @@ export class DirectoryconfService {
   N_INIT: 3
   NN_BUDGET: 100`;
     writeFile(
-      `${this.getSecondDir()}/configs/deep_sort.yaml`,
+      `${this.getSecondDir()}/deep-sort/configs/deep_sort.yaml`,
       confTempl,
       (err) => {
         if (err) {

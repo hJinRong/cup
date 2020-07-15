@@ -41,8 +41,10 @@ export class DoctypeComponent implements OnInit {
     const pythonProg = this.cf.getSecondDir();
     // 为了避免没有设置路径就运行，结果导致找不到路径
     this.cf.writeConfInRuntime();
+
+    // TODO .pt .cfg .yaml dir changed
     exec(
-      `${pythonScript}/python.exe ${pythonProg}/my_deepsort.py --VIDEO_PATH ${this.dir} --weights ${pythonProg}/best4.pt --yolov3_cfg ${pythonProg}/yolov3-tiny-1cls-se.cfg --config_deepsort ${pythonProg}/configs/deep_sort.yaml`,
+      `${pythonScript}/python.exe ${pythonProg}/my_deepsort.py --VIDEO_PATH ${this.dir} --weights ${pythonProg}/weights/best4.pt --yolov3_cfg ${pythonProg}/yolo_tiny_utils/model/yolov3-tiny-1cls-se.cfg --config_deepsort ${pythonProg}/deep_sort/configs/deep_sort.yaml`,
 
       /**
        * @param err 为了避免意外退出，不抛出错误
